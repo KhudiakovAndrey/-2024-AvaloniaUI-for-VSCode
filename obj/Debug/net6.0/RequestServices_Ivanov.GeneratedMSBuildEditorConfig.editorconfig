@@ -1,0 +1,37 @@
+is_global = true
+build_property.AvaloniaNameGeneratorIsEnabled = true
+build_property.AvaloniaNameGeneratorBehavior = InitializeComponent
+build_property.AvaloniaNameGeneratorDefaultFieldModifier = internal
+build_property.AvaloniaNameGeneratorFilterByPath = *
+build_property.AvaloniaNameGeneratorFilterByNamespace = *
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = RequestServices_Ivanov
+build_property.ProjectDir = D:\miniDev\project\Avalonia\Avalonia for VScode\КОД 2024 AvaloniaUI for VSCode\RequestServices_Ivanov\
+
+[D:/miniDev/project/Avalonia/Avalonia for VScode/КОД 2024 AvaloniaUI for VSCode/RequestServices_Ivanov/App.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[D:/miniDev/project/Avalonia/Avalonia for VScode/КОД 2024 AvaloniaUI for VSCode/RequestServices_Ivanov/Icons.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[D:/miniDev/project/Avalonia/Avalonia for VScode/КОД 2024 AvaloniaUI for VSCode/RequestServices_Ivanov/Views/AddOrChangeRequestView.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[D:/miniDev/project/Avalonia/Avalonia for VScode/КОД 2024 AvaloniaUI for VSCode/RequestServices_Ivanov/Views/DashboardView.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[D:/miniDev/project/Avalonia/Avalonia for VScode/КОД 2024 AvaloniaUI for VSCode/RequestServices_Ivanov/Views/MainWindow.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[D:/miniDev/project/Avalonia/Avalonia for VScode/КОД 2024 AvaloniaUI for VSCode/RequestServices_Ivanov/Views/NavigationWindow.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[D:/miniDev/project/Avalonia/Avalonia for VScode/КОД 2024 AvaloniaUI for VSCode/RequestServices_Ivanov/Views/RequestServicesView.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml

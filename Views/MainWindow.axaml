@@ -1,0 +1,64 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:RequestServices_Ivanov.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+        xmlns:local="clr-namespace:RequestServices_Ivanov"
+        mc:Ignorable="d" d:DesignWidth="400" d:DesignHeight="300"
+        Width="400" Height="300"
+        CanResize="False"
+        x:Class="RequestServices_Ivanov.Views.MainWindow"
+        x:DataType="vm:MainWindowViewModel"
+        x:Name="LoginWindow"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="Авторизация" WindowStartupLocation="CenterScreen"
+        FontSize="16" FontFamily="Arial" 
+        DataContext="MainWindowViewModel">
+   
+    <Design.DataContext>
+        <!-- This only sets the DataContext for the previewer in an IDE,
+             to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
+        <vm:MainWindowViewModel/>
+    </Design.DataContext>
+    
+    <StackPanel Margin="20 40 20 20">
+        <!-- Описание стиле которые буду применяться ко всем элементом типа TextBox -->
+        <StackPanel.Styles>
+            <Style Selector="TextBox">    
+                <!-- Для всех элементов этого типа будут определяться свойства со значениями -->
+                <Setter Property="Margin" Value="0 15 0 0"/>
+                <Setter Property="Background" Value="LightGray"/>
+                <Setter Property="BorderThickness" Value="0"/>
+                <Setter Property="Width" Value="300"/>
+                <Setter Property="Height" Value="40"/>
+                <Setter Property="VerticalContentAlignment" Value="Center"/>
+                </Style>
+        </StackPanel.Styles>
+        <TextBlock HorizontalAlignment="Center" FontSize="20" FontWeight="Bold" Text="Авторизация"/>
+        <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" >
+            <!-- Извлекаем иконку из файла стиля который мы опередели в App.axaml -->
+            <PathIcon Margin="0 13 5 0" Data="{StaticResource person_regular}"/>
+            <TextBox Text="{Binding Login}" CornerRadius="3" Watermark="Логин"
+                  VerticalAlignment="Stretch"/>        
+        </StackPanel>
+        <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" >
+            <PathIcon Margin="0 13 5 0" Data="{StaticResource person_accounts_regular}"/>
+            <TextBox Text="{Binding Password}" CornerRadius="3" Watermark="Пароль"
+                    VerticalAlignment="Stretch" PasswordChar="*"
+                    Classes="revealPasswordButton"/>        
+        </StackPanel>
+        <Button HorizontalContentAlignment="Center"
+                Click="LoginButton_Click"
+                HorizontalAlignment="Stretch"
+                VerticalContentAlignment="Center"
+                Margin="40 20 15 20" 
+                CornerRadius="5"
+                Background="LawnGreen"
+                FontWeight="DemiBold"
+                Height="40" 
+                Content="Войти" IsDefault="True"/>
+                <!-- Своство isDefault задаёт нажатие по кнопки с помощью клавиши Enter -->
+    </StackPanel>
+
+</Window>

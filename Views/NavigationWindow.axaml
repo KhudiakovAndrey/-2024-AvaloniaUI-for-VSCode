@@ -1,0 +1,72 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:vm="using:RequestServices_Ivanov.ViewModels"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        Width="1000" Height="450"
+        MinWidth="800" MinHeight="450"
+        x:DataType="vm:NavigationWindowViewModel"
+        x:Class="RequestServices_Ivanov.Views.NavigationWindow"
+        Background="#f3f3f3"
+        FontSize="16" FontFamily="Arial"
+        Title="Главное меню">
+
+        <Grid ColumnDefinitions="130,*" RowDefinitions="50,*" >
+                <TextBlock Grid.Column="0" Grid.Row="0" TextAlignment="Center"
+                        TextWrapping="WrapWithOverflow" HorizontalAlignment="Center">
+                        <Run Text="{Binding User.Fio}"/>
+                </TextBlock>
+                
+                <Grid Background="White" Grid.Column="1" Grid.Row="0" Grid.RowSpan="2">
+                        <ContentControl Content="{Binding CurrentView}"/>
+                </Grid>
+
+                <StackPanel Grid.Column="0" Grid.Row="1">
+                        <StackPanel.Styles>
+                                        <Style Selector="RadioButton.Menu" >
+                                        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                                        <Setter Property="VerticalContentAlignment" Value="Center"/>
+                                        <Setter Property="HorizontalAlignment" Value="Stretch"/>
+                                        <Setter Property="Height" Value="30"/>
+                                        <Setter Property="CornerRadius" Value="0"/>
+                                        <Setter Property="FontWeight" Value="Bold"/>
+                                        <Setter Property="Background" Value="#f3f3f3"/>
+                                        <Setter Property="BorderThickness" Value="0"/>
+                                        <Setter Property="Template">
+                                                <Setter.Value>
+                                                <ControlTemplate>
+                                                <Border
+                                                Height="{TemplateBinding Height}"
+                                                CornerRadius="{TemplateBinding CornerRadius}"
+                                                Width="{TemplateBinding Width}"
+                                                BorderThickness="{TemplateBinding BorderThickness}"
+                                                Background="{TemplateBinding Background}"
+                                                BorderBrush="{TemplateBinding BorderBrush}">
+                                                <ContentPresenter
+                                                        Name="PART_ContentPresenter"
+                                                        HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                                        VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                                        Content="{TemplateBinding Content}"
+                                                        ContentTemplate="{TemplateBinding ContentTemplate}"
+                                                        RecognizesAccessKey="True" />
+                                                </Border>
+                                                </ControlTemplate>
+                                                </Setter.Value>
+                                        </Setter>
+                                </Style>
+                                <Style Selector="RadioButton.Menu[IsChecked=true]">
+                                        <Setter Property="Background" Value="White"/>
+                                        
+                                </Style>
+                                <Style Selector="RadioButton.Menu:pointerover">
+                                        <Setter Property="Background" Value="#fcfcfc"/>
+                                        
+                                </Style>
+                        </StackPanel.Styles>
+                        <RadioButton Classes="Menu" Content="Главное меню" Command="{Binding DachboardCommand}">
+                                </RadioButton>
+                        <RadioButton Classes="Menu" Content="Заявки" Command="{Binding RequestServicesCommand}" IsChecked="True"/>
+                </StackPanel>
+        </Grid>
+</Window>

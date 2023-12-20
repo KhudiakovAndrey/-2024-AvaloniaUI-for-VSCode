@@ -1,0 +1,59 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:RequestServices_Ivanov.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="RequestServices_Ivanov.Views.DashboardView"
+             x:DataType="vm:DashboardViewModel"
+             FontSize="14" FontFamily="Arial"
+             DataContext="DashboardViewModel">
+
+  <!-- Создали контейнер StackPanel для хранения и упорядочивания элементов 
+  (если не указано свойство Orientation, то по умолчанию элементы упорядочиваются  по вертикали (сверху вниз)) -->
+  <StackPanel>
+    <!-- Создали второй StackPanel для упорядочивания элементов по горизонтали чтобы создать ряд вывесок статистик -->
+    <StackPanel Margin="20" Orientation="Horizontal">
+
+      <!-- Граница (Border) с информацией о последней добавленной заявки пользователя -->
+      <!-- Так как граница не является контейнером, то внутри него не может быть больше одного элемента
+      Поэтому мы создали контейнер чтобы создать несколько элементов для отожранеия информации -->
+      <Border Width="200" Height="150" CornerRadius="10" 
+              Background="Chartreuse">
+        <StackPanel Margin="10">
+          <TextBlock TextWrapping="WrapWithOverflow" Text="Последняя добавленная заявка"/>
+
+          <!-- Текст мы привязывем к публичному свойству LastAddRequest в DashboardViewModel -->
+          <TextBlock Margin="0 25" HorizontalAlignment="Center" FontSize="30" FontWeight="Bold" Text="{Binding LastAddRequest}"/>
+        </StackPanel>
+      </Border>
+
+      <!-- Количество созданных заявок
+      Аналогично создали несколько вывесок  -->
+      <Border Margin="20 0" Width="200" Height="150" CornerRadius="10" 
+              Background="Beige">
+        <StackPanel Margin="10">
+          <TextBlock TextWrapping="WrapWithOverflow" Text="Количество созданных заявок"/>
+
+          <!-- Текст мы привязывем к публичному свойству CountAddRequest в DashboardViewModel -->
+          <TextBlock Margin="0 25"  HorizontalAlignment="Center" 
+          FontSize="30" FontWeight="Bold" Text="{Binding CountAddRequest}"/>
+        </StackPanel>
+      </Border>
+
+      <!-- Количество заявок в обработке -->
+        <Border Margin="20 0" Width="200" Height="150" CornerRadius="10" 
+          Background="Cyan">
+        <StackPanel Margin="10">
+          <TextBlock TextWrapping="WrapWithOverflow" Text="Количество заявок в обработке"/>
+          
+          <!-- Текст мы привязывем к публичному свойству CountRequestStatusWorking в DashboardViewModel -->
+          <TextBlock Margin="0 25"  HorizontalAlignment="Center" 
+          FontSize="30" FontWeight="Bold" Text="{Binding CountRequestStatusWorking}"/>
+        </StackPanel>
+      </Border>
+
+    </StackPanel>
+  </StackPanel>
+
+</UserControl>
